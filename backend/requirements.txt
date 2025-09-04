@@ -1,0 +1,17 @@
+# FastAPI Web Server
+fastapi
+uvicorn[standard]
+python-dotenv
+
+# LangChain and LangGraph Core
+langchain
+langgraph
+langchain-google-genai
+
+# Tools and Vector Stores
+tavily-python
+faiss-cpu
+sentence-transformers
+
+# Required for LangChain's FAISS loader
+langchain_community
