@@ -1,10 +1,12 @@
 import os ,re, fitz
 from langchain.document_loaders import WebBaseLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.vectorstores import FAISS
-from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.schema import Document
+from dotenv import load_dotenv
 
+load_dotenv()
 def extract_pdf_text_pymupdf(path):
     doc = fitz.open(path)
     texts = []
@@ -55,7 +57,7 @@ splitter = RecursiveCharacterTextSplitter(
 
 docs = splitter.split_documents(all_docs)
 
-embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
 # FAISS DB
 vectorstore = FAISS.from_documents(docs, embedding_model)

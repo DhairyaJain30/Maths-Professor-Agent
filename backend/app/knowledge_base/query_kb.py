@@ -1,5 +1,5 @@
 from langchain.vectorstores import FAISS
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
@@ -12,7 +12,8 @@ load_dotenv()
 google_api_key = os.getenv("GOOGLE_API_KEY")
 
 
-embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+
+embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
 # Load FAISS index
 from pathlib import Path
