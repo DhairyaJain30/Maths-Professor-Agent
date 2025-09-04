@@ -3,7 +3,7 @@ from langchain.embeddings import HuggingFaceEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
-import google.generativeai as genai 
+
 import os 
 from dotenv import load_dotenv
 
@@ -63,3 +63,4 @@ def query_kbf(query: str) -> str:
     # Run LLM chain
     answer = chain.run({"question": query, "context": context})
     return answer
+
