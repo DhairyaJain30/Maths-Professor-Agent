@@ -3,7 +3,7 @@ import requests
 import json
 
 # --- Configuration ---
-FASTAPI_BASE_URL = "http://127.0.0.1:8000"
+FASTAPI_BASE_URL = "https://maths-professor-agent.onrender.com"
 GENERATE_URL = f"{FASTAPI_BASE_URL}/generate"
 FEEDBACK_URL = f"{FASTAPI_BASE_URL}/feedback"
 
